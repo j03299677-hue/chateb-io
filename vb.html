@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tim Brennan Heating & Air Conditioning | Carlsbad HVAC</title>
+  <meta name="description" content="Professional heating and air conditioning installation, repair and maintenance in Carlsbad, California. 24/7 service. Call 760-583-8083.">
+  <meta name="theme-color" content="#102b43">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#102b43;
+      --navy-2:#173d5d;
+      --blue:#28618d;
+      --gold:#d3a052;
+      --gold-dark:#b78335;
+      --cream:#f7f4ed;
+      --white:#fff;
+      --text:#172b3d;
+      --muted:#687888;
+      --line:#dfe5e9;
+      --soft:#eef2f4;
+      --green:#2d7b51;
+      --shadow:0 20px 60px rgba(16,43,67,.12);
+      --radius:16px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--cream);
+      color:var(--text);
+      font-family:"Source Sans 3",Arial,sans-serif;
+      line-height:1.65;
+    }
+    img{display:block;width:100%;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(var(--max),calc(100% - 36px));margin:auto}
+    .serif,h1,h2,h3,.brand{font-family:"Libre Baskerville",Georgia,serif}
+
+    /* ACCESSIBILITY */
+    .skip-link{
+      position:fixed;left:12px;top:-60px;z-index:9999;
+      background:#fff;color:var(--navy);padding:10px 15px;border-radius:8px
+    }
+    .skip-link:focus{top:12px}
+    :focus-visible{outline:3px solid rgba(211,160,82,.75);outline-offset:3px}
+
+    /* TOP BAR */
+    .topbar{
+      background:#0b2235;color:#fff;font-size:.88rem
+    }
+    .topbar-inner{
+      min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px
+    }
+    .topbar a{color:#fff}
+    .topbar-right{display:flex;gap:20px}
+    .status-dot{
+      display:inline-block;width:8px;height:8px;border-radius:50%;
+      background:#53bd79;margin-right:7px
+    }
+
+    /* HEADER */
+    header{
+      position:absolute;left:0;right:0;top:38px;z-index:100;
+      color:#fff;transition:.25s
+    }
+    header.scrolled{
+      position:fixed;top:0;background:rgba(16,43,67,.96);
+      backdrop-filter:blur(12px);box-shadow:0 5px 25px rgba(0,0,0,.12)
+    }
+    .header-inner{
+      min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px
+    }
+    .brand{font-weight:700;font-size:1.05rem;white-space:nowrap}
+    .brand span{color:var(--gold)}
+    nav{display:flex;align-items:center;gap:27px}
+    nav a{font-size:.94rem;color:rgba(255,255,255,.88);transition:.2s}
+    nav a:hover{color:var(--gold)}
+    .header-call{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--gold);color:#182b3a;padding:11px 16px;
+      border-radius:9px;font-weight:800;transition:.2s
+    }
+    .header-call:hover{background:#e0b56c;transform:translateY(-1px)}
+    .menu-toggle{
+      display:none;width:44px;height:44px;border:1px solid rgba(255,255,255,.25);
+      border-radius:9px;background:rgba(0,0,0,.12);color:#fff;font-size:1.35rem
+    }
+    .mobile-nav{
+      display:none;background:#fff;color:var(--navy);border-radius:12px;
+      padding:10px;box-shadow:var(--shadow)
+    }
+    .mobile-nav a{display:block;padding:12px;border-radius:8px}
+    .mobile-nav a:hover{background:var(--soft)}
+
+    /* HERO */
+    .hero{
+      min-height:790px;position:relative;display:flex;align-items:center;
+      overflow:hidden;background:var(--navy);color:#fff
+    }
+    .hero-bg{
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      object-position:center;opacity:.9;animation:zoom 24s ease-in-out infinite alternate
+    }
+    @keyframes zoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+    .hero-overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(90deg,rgba(8,28,45,.97) 0%,rgba(12,43,67,.82) 48%,rgba(12,43,67,.30) 100%)
+    }
+    .hero-content{position:relative;z-index:2;padding:155px 0 95px;max-width:790px}
+    .eyebrow{
+      color:var(--gold);font-size:.78rem;font-weight:800;
+      text-transform:uppercase;letter-spacing:.17em
+    }
+    .availability{
+      display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.28);
+      border-radius:999px;padding:7px 13px;margin-bottom:20px;
+      background:rgba(255,255,255,.06);font-size:.77rem;letter-spacing:.12em;text-transform:uppercase
+    }
+    .availability i{width:8px;height:8px;border-radius:50%;background:#57c77c}
+    h1{font-size:clamp(2.8rem,6vw,5.6rem);line-height:1.05;letter-spacing:-.035em}
+    h1 span{color:var(--gold)}
+    .hero-copy{
+      max-width:650px;margin-top:24px;color:rgba(255,255,255,.84);font-size:1.16rem
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:31px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      border:0;border-radius:10px;padding:14px 21px;font-weight:800;
+      transition:.2s;min-height:50px
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--gold);color:#1b2b39}
+    .btn-primary:hover{background:#e0b56c}
+    .btn-light{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.3)}
+    .btn-light:hover{background:rgba(255,255,255,.14)}
+    .hero-points{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;color:rgba(255,255,255,.8)}
+    .hero-points span{display:flex;gap:7px;align-items:center}
+    .check{color:var(--gold);font-weight:900}
+
+    /* QUICK INFO */
+    .quick{background:#fff;border-bottom:1px solid var(--line)}
+    .quick-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+    .quick-item{
+      display:flex;align-items:center;gap:14px;padding:23px 25px;border-right:1px solid var(--line)
+    }
+    .quick-item:last-child{border-right:0}
+    .quick-icon{
+      width:45px;height:45px;display:grid;place-items:center;flex:0 0 45px;
+      background:#f0ece4;border-radius:11px;color:var(--blue);font-size:1.25rem
+    }
+    .quick-item strong{display:block;font-size:1rem}
+    .quick-item small{display:block;color:var(--muted)}
+
+    /* GENERAL */
+    .section{padding:95px 0}
+    .section-heading{max-width:760px}
+    h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;margin-top:8px}
+    .section-heading p{margin-top:15px;color:var(--muted);font-size:1.08rem}
+    .section-label{color:var(--blue);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em}
+
+    /* SERVICES */
+    .services{background:var(--cream)}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:43px}
+    .service-card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+      overflow:hidden;transition:.25s
+    }
+    .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .service-image{aspect-ratio:4/3;overflow:hidden}
+    .service-image img{height:100%;object-fit:cover;transition:.5s}
+    .service-card:hover .service-image img{transform:scale(1.045)}
+    .service-body{padding:25px}
+    .service-icon{font-size:1.45rem;color:var(--blue);margin-bottom:10px}
+    h3{font-size:1.22rem}
+    .service-body p{margin-top:8px;color:var(--muted)}
+
+    /* ABOUT */
+    .about{background:#e9e8e1}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}
+    .about-image{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .about-image img{aspect-ratio:4/3;object-fit:cover}
+    .about-copy p{margin-top:16px;color:var(--muted);font-size:1.05rem}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:27px}
+    .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px 10px;text-align:center}
+    .stat strong{display:block;font-family:"Libre Baskerville",serif;color:var(--blue);font-size:1.45rem}
+    .stat span{display:block;color:var(--muted);font-size:.84rem;margin-top:2px}
+
+    /* WHY US */
+    .why{background:#fff}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+    .why-card{padding:27px;border:1px solid var(--line);border-radius:var(--radius)}
+    .why-number{font-family:"Libre Baskerville",serif;color:var(--gold);font-size:1.6rem}
+    .why-card p{margin-top:9px;color:var(--muted)}
+
+    /* REVIEWS */
+    .reviews{background:var(--cream)}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+    .review{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:27px}
+    .stars{color:var(--gold);letter-spacing:2px;font-size:1.05rem}
+    .review p{margin-top:14px;color:#526170}
+    .review-author{margin-top:18px;font-weight:800}
+    .review-role{color:var(--muted);font-size:.85rem}
+
+    /* CONTACT */
+    .contact{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+    .contact:after{
+      content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+      right:-260px;top:-260px;background:rgba(211,160,82,.08)
+    }
+    .contact-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
+    .contact-copy p{margin-top:15px;max-width:560px;color:rgba(255,255,255,.72)}
+    .contact-list{list-style:none;margin-top:28px;display:grid;gap:15px}
+    .contact-list li{display:flex;align-items:flex-start;gap:12px}
+    .contact-list b{color:var(--gold)}
+    .contact-list a:hover{color:var(--gold)}
+    .contact-form{background:#fff;color:var(--text);border-radius:17px;padding:29px;box-shadow:var(--shadow)}
+    .contact-form h3{font-size:1.45rem}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:21px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field.full{grid-column:1/-1}
+    label{font-weight:700;font-size:.88rem}
+    input,textarea{
+      width:100%;border:1px solid var(--line);border-radius:9px;
+      padding:12px 13px;background:#fff;color:var(--text);outline:0
+    }
+    input:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(40,97,141,.1)}
+    textarea{min-height:130px;resize:vertical}
+    .form-submit{width:100%;margin-top:16px}
+    .form-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:10px}
+    .form-success{
+      display:none;margin-top:12px;padding:10px;border-radius:8px;
+      background:#e8f6ed;color:var(--green);font-weight:700;text-align:center
+    }
+
+    /* FOOTER */
+    footer{background:#0b2235;color:#fff}
+    .footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:45px;padding:65px 0}
+    .footer-brand{font-family:"Libre Baskerville",serif;font-weight:700;font-size:1.1rem}
+    .footer-brand span{color:var(--gold)}
+    .footer-desc{margin-top:14px;max-width:500px;color:rgba(255,255,255,.62)}
+    .footer-col h4{color:var(--gold);font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:15px}
+    .footer-col ul{list-style:none;display:grid;gap:9px;color:rgba(255,255,255,.68)}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1)}
+    .footer-bottom-inner{min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:rgba(255,255,255,.5);font-size:.84rem}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      nav,.header-call{display:none}
+      .menu-toggle{display:block}
+      .mobile-nav.open{display:block}
+      .quick-grid,.service-grid,.why-grid,.review-grid{grid-template-columns:1fr}
+      .quick-item{border-right:0;border-bottom:1px solid var(--line)}
+      .quick-item:last-child{border-bottom:0}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:620px){
+      .container{width:min(var(--max),calc(100% - 28px))}
+      .topbar-inner{justify-content:center}
+      .topbar-right{display:none}
+      .hero{min-height:730px}
+      .hero-content{padding:145px 0 80px}
+      .hero-actions{display:grid}
+      .hero-actions .btn{width:100%}
+      .hero-points{display:grid;gap:9px}
+      .section{padding:68px 0}
+      .stats{grid-template-columns:1fr}
+      .form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-bottom-inner{flex-direction:column;justify-content:center;padding:14px 0;text-align:center}
+    }
+  </style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div><span class="status-dot"></span>Open 24 hours, 7 days a week</div>
+    <div class="topbar-right">
+      <a href="tel:+17605838083">760-583-8083</a>
+      <span>Carlsbad, California</span>
+    </div>
+  </div>
+</div>
+
+<header id="siteHeader">
+  <div class="container header-inner">
+    <a href="#top" class="brand">TIM BRENNAN <span>HVAC</span></a>
+
+    <nav aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="header-call" href="tel:+17605838083">☎ Call 760-583-8083</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+
+  <div class="container">
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+17605838083">☎ Call 760-583-8083</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <img
+      class="hero-bg"
+      src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=2200&q=85"
+      alt="HVAC technician servicing heating and air conditioning equipment"
+    >
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="availability"><i></i> Available 24/7</div>
+
+        <div class="eyebrow">Heating & Air Conditioning</div>
+
+        <h1>Comfort you can <span>count on.</span></h1>
+
+        <p class="hero-copy">
+          Honest, dependable heating and air conditioning installation,
+          repair and maintenance for homes and businesses throughout
+          Carlsbad and North County San Diego.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+17605838083">☎ Call Now</a>
+          <a class="btn btn-light" href="#contact">Request a Free Estimate →</a>
+        </div>
+
+        <div class="hero-points">
+          <span><b class="check">✓</b> Fast response</span>
+          <span><b class="check">✓</b> Upfront service</span>
+          <span><b class="check">✓</b> Residential & commercial</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick">
+    <div class="container quick-grid">
+      <div class="quick-item">
+        <div class="quick-icon">☎</div>
+        <div><strong>Call anytime</strong><small>760-583-8083</small></div>
+      </div>
+      <div class="quick-item">
+        <div class="quick-icon">⌖</div>
+        <div><strong>Local service</strong><small>Carlsbad & North County</small></div>
+      </div>
+      <div class="quick-item">
+        <div class="quick-icon">◷</div>
+        <div><strong>Emergency service</strong><small>Day or night</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-label">Our services</div>
+        <h2>Heating & cooling services built around your comfort.</h2>
+        <p>From routine maintenance to urgent repairs and complete system installation, we help keep your property comfortable year-round.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1631545806609-1e0c6b6a7e1a?auto=format&fit=crop&w=1100&q=85" alt="Air conditioning equipment" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-icon">❄</div>
+            <h3>AC Installation</h3>
+            <p>Professional air-conditioning installation focused on dependable performance and comfortable indoor temperatures.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1100&q=85" alt="HVAC technician working on equipment" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-icon">♨</div>
+            <h3>Heating Systems</h3>
+            <p>Heating installation, troubleshooting and service to help keep your home or business comfortable.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1100&q=85" alt="HVAC technician servicing a system" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-icon">🔧</div>
+            <h3>Repairs & Maintenance</h3>
+            <p>Responsive repairs and preventive maintenance for residential and commercial heating and cooling systems.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=85" alt="Professional home service technician" loading="lazy">
+      </div>
+
+      <div class="about-copy">
+        <div class="section-label">About the company</div>
+        <h2>Local service. Straight answers. Quality work.</h2>
+        <p>Tim Brennan Heating & Air Conditioning provides heating and cooling installation, repair and maintenance for homes and businesses in Carlsbad, California and the surrounding North County area.</p>
+        <p>Need help right now? Call any time, day or night, or use the estimate form to send a service request.</p>
+
+        <div class="stats">
+          <div class="stat"><strong>24/7</strong><span>Availability</span></div>
+          <div class="stat"><strong>Local</strong><span>Carlsbad service</span></div>
+          <div class="stat"><strong>Free</strong><span>Estimate requests</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why" id="why">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-label">Why choose us</div>
+        <h2>A simpler HVAC service experience.</h2>
+        <p>Make it easy for customers to understand what you offer and how to reach you.</p>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card">
+          <div class="why-number">01</div>
+          <h3>Fast response</h3>
+          <p>Customers can call directly when they need urgent heating or cooling assistance.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-number">02</div>
+          <h3>Clear communication</h3>
+          <p>Explain the service, next steps and estimate clearly before work begins.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-number">03</div>
+          <h3>Year-round support</h3>
+          <p>Promote installation, repairs and maintenance so customers know the full range of services available.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="section-heading">
+        <div class="section-label">Customer experience</div>
+        <h2>Built around dependable service.</h2>
+        <p>Replace the sample reviews below with verified customer reviews before publishing.</p>
+      </div>
+
+      <div class="review-grid">
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Fast response and clear communication from the first call through the service visit.”</p>
+          <div class="review-author">Customer review</div>
+          <div class="review-role">Carlsbad, CA</div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Professional service and a straightforward explanation of the work that was needed.”</p>
+          <div class="review-author">Customer review</div>
+          <div class="review-role">North County San Diego</div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>“The ability to contact the company when an urgent HVAC issue comes up is reassuring.”</p>
+          <div class="review-author">Customer review</div>
+          <div class="review-role">Local business</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy">
+        <div class="eyebrow">Get in touch</div>
+        <h2>Need heat or AC now?</h2>
+        <p>Call any time, day or night, or send your details through the form for a free estimate.</p>
+
+        <ul class="contact-list">
+          <li><b>☎</b><a href="tel:+17605838083">+1 760-583-8083</a></li>
+          <li><b>⌖</b><a href="https://www.google.com/maps/search/?api=1&query=3024+Newshire+St+Carlsbad+CA+92010" target="_blank" rel="noopener">3024 Newshire St, Carlsbad, CA 92010</a></li>
+          <li><b>◷</b><span>Open 24 hours, 7 days a week</span></li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="leadForm">
+        <h3>Request a free estimate</h3>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="field full">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+
+          <div class="field full">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" placeholder="Tell us what you need..."></textarea>
+          </div>
+        </div>
+
+        <button class="btn btn-primary form-submit" type="submit">Send Request →</button>
+        <p class="form-note">Your information is used to respond to your service request.</p>
+        <div class="form-success" id="formSuccess" role="status">Thanks! Your request has been prepared. Please call 760-583-8083 for immediate service.</div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">TIM BRENNAN <span>HVAC</span></div>
+      <p class="footer-desc">Heating and air conditioning installation, repair and maintenance for homes and businesses in Carlsbad, California.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li>AC Installation</li>
+        <li>Heating Systems</li>
+        <li>Repairs & Maintenance</li>
+        <li>24/7 Emergency Service</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© 2026 Tim Brennan Heating & Air Conditioning. All rights reserved.</span>
+      <span>Serving Carlsbad & North County San Diego</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById("siteHeader");
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileNav = document.getElementById("mobileNav");
+  const leadForm = document.getElementById("leadForm");
+  const formSuccess = document.getElementById("formSuccess");
+
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  });
+
+  menuToggle.addEventListener("click", () => {
+    const open = mobileNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", open);
+    menuToggle.textContent = open ? "×" : "☰";
+  });
+
+  document.querySelectorAll(".mobile-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    });
+  });
+
+  leadForm.addEventListener("submit", event => {
+    event.preventDefault();
+    formSuccess.style.display = "block";
+    leadForm.reset();
+  });
+</script>
+
+</body>
+</html>
